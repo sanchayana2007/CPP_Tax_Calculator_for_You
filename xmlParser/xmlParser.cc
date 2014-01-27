@@ -9,7 +9,7 @@ class xmlParser
 private:
 		string Field_xml[];
 public:
-		xmlParser(string str[])
+		xmlParser(string str)
 		{
 		
 			

@@ -1,29 +1,36 @@
 // created by Sanche 
+#include<fstream>
+#include<iostream>
+using namespace std;
 
-Class File_handler
+class File_handler
 {
 private:
-		 fstream  file_input;
-		 fstream output_file;
+		 ifstream  file_input;
+		 ofstream output_file;
+		 streampos  sizeoffile;
 
 public:
 		//Setters.
-		File_handler(string filename)
+		File_handler(string filename):file_input(filename)
 		{
 			//Opeinng of the file 
-			fstream fh = fopen(filename, "+w");
-			if(fh != '\0')
-				fostream foh = fopen(filename, "+w");
-			else
-				Logger("DEBUG::ERR Unable to open the File");
+			
+			if(file_input != '\0')
+				{
+					//fostream foh = fopen(filename);
+					sizeoffile = file_input.tellg();
+				}
+			
+				//Logger("DEBUG::ERR Unable to open the File");
 		
 		}
 
 		// This read file will give array of string containing each line of xml 
-		string [] read_frm_file()
+		string* read_frm_file()
 		{
 		
-			Logger("DEBUG::Reading is done from  the File");
+			//Logger("DEBUG::Reading is done from  the File");
 		}
 
 		void write_to_file()
